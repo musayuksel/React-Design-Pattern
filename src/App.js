@@ -2,6 +2,12 @@ import "./App.css";
 import SplitScreen from "./components/SplitScreen";
 import { Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav";
+import RegularList from "./components/RegularList";
+import { people, products } from "./utils/data";
+import SmallPersonList from "./components/SmallPersonList";
+import LargePeopleList from "./components/LargePeopleList";
+import LargeProductList from "./components/LargeProductList";
+import SmallProductList from "./components/SmallProductList";
 
 function App() {
   const LeftComponent = () => <h1 style={{ backgroundColor: "aqua" }}>LEFT</h1>;
@@ -25,7 +31,35 @@ function App() {
             </SplitScreen>
           }
         />
-        <Route path="/list-items" element={<p>list item</p>} />
+        <Route
+          path="/list-items"
+          //when we call the RegularList, for each person it will render within the itemComponent
+          //So RegularList component much more reusable
+          element={
+            <>
+              <RegularList
+                items={people}
+                resourceName="person"
+                itemComponent={SmallPersonList}
+              />
+              <RegularList
+                items={people}
+                resourceName="person"
+                itemComponent={LargePeopleList}
+              />
+              <RegularList
+                items={products}
+                resourceName="product"
+                itemComponent={SmallProductList}
+              />
+              <RegularList
+                items={products}
+                resourceName="product"
+                itemComponent={LargeProductList}
+              />
+            </>
+          }
+        />
       </Routes>
     </>
   );
