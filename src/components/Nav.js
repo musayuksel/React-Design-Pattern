@@ -9,6 +9,9 @@ export default function Nav() {
       <li>
         <Link to={"list-items"}>List Items</Link>
       </li>
+      <li>
+        <Link to={"modal"}>Modals</Link>
+      </li>
     </ul>
   );
 }

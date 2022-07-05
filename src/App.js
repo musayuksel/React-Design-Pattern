@@ -8,6 +8,7 @@ import SmallPersonList from "./components/SmallPersonList";
 import LargePeopleList from "./components/LargePeopleList";
 import LargeProductList from "./components/LargeProductList";
 import SmallProductList from "./components/SmallProductList";
+import Modal from "./components/Modal";
 
 function App() {
   const LeftComponent = () => <h1 style={{ backgroundColor: "aqua" }}>LEFT</h1>;
@@ -58,6 +59,14 @@ function App() {
                 itemComponent={LargeProductList}
               />
             </>
+          }
+        />
+        <Route
+          path="/modal"
+          element={
+            <Modal>
+              <LargeProductList product={products[1]} />
+            </Modal>
           }
         />
       </Routes>
