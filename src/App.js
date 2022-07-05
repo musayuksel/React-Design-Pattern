@@ -9,6 +9,7 @@ import LargePeopleList from "./components/LargePeopleList";
 import LargeProductList from "./components/LargeProductList";
 import SmallProductList from "./components/SmallProductList";
 import Modal from "./components/Modal";
+import UncontrolledForm from "./components/UncontrolledForm";
 
 function App() {
   const LeftComponent = () => <h1 style={{ backgroundColor: "aqua" }}>LEFT</h1>;
@@ -69,6 +70,7 @@ function App() {
             </Modal>
           }
         />
+        <Route path="/uncontrolled-form" element={<UncontrolledForm />} />
       </Routes>
     </>
   );

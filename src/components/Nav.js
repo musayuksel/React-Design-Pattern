@@ -12,6 +12,9 @@ export default function Nav() {
       <li>
         <Link to={"modal"}>Modals</Link>
       </li>
+      <li>
+        <Link to={"uncontrolled-form"}>Uncontrolled Form</Link>
+      </li>
     </ul>
   );
 }
