@@ -2,15 +2,19 @@ import "./App.css";
 import SplitScreen from "./components/SplitScreen";
 
 function App() {
-  const leftComponent = () => <h1 style={{ backgroundColor: "aqua" }}>LEFT</h1>;
-  const rightComponent = () => <p style={{ backgroundColor: "pink" }}>Right</p>;
+  const LeftComponent = () => <h1 style={{ backgroundColor: "aqua" }}>LEFT</h1>;
+  const RightComponent = () => <p style={{ backgroundColor: "pink" }}>Right</p>;
   return (
     <SplitScreen
-      left={leftComponent}
-      right={rightComponent}
+      // left={LeftComponent}
+      // right={RightComponent}
       leftWeight={1}
       rightWeight={3}
-    />
+    >
+      {/* Pass as a children component */}
+      <LeftComponent />
+      <RightComponent />
+    </SplitScreen>
   );
 }
 
