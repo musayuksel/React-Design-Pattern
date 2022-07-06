@@ -18,6 +18,11 @@ export default function Nav() {
       <li>
         <Link to={"controlled-form"}>Controlled Form</Link>
       </li>
+      <li>
+        <Link to={"uncontrolled-onboarding-flow"}>
+          Uncontrolled Onboarding Flow
+        </Link>
+      </li>
     </ul>
   );
 }

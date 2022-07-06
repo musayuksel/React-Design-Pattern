@@ -11,10 +11,31 @@ import SmallProductList from "./components/SmallProductList";
 import Modal from "./components/Modal";
 import UncontrolledForm from "./components/UncontrolledForm";
 import ControlledForm from "./components/ControlledForm";
+import UncontrolledOnboardingFlow from "./components/UncontrolledOnboardingFlow";
 
 function App() {
   const LeftComponent = () => <h1 style={{ backgroundColor: "aqua" }}>LEFT</h1>;
   const RightComponent = () => <p style={{ backgroundColor: "pink" }}>Right</p>;
+  // UNCONTROLLED ONBOARDING FLOW
+  const StepOneComponent = ({ goToNext }) => (
+    <>
+      <h1>Step One</h1>
+      <button onClick={goToNext}>Next</button>
+    </>
+  );
+  const StepTwoComponent = ({ goToNext }) => (
+    <>
+      <h1>Step Two</h1>
+      <button onClick={goToNext}>Next</button>
+    </>
+  );
+  const StepThreeComponent = ({ goToNext }) => (
+    <>
+      <h1>Step Three</h1>
+      <button onClick={goToNext}>Next</button>
+    </>
+  );
+
   return (
     <>
       <Nav />
@@ -73,6 +94,19 @@ function App() {
         />
         <Route path="/uncontrolled-form" element={<UncontrolledForm />} />
         <Route path="/controlled-form" element={<ControlledForm />} />
+        {/* ************************************** */}
+
+        <Route
+          path="/uncontrolled-onboarding-flow"
+          element={
+            <UncontrolledOnboardingFlow>
+              <StepOneComponent />
+              <StepTwoComponent />
+              <StepThreeComponent />
+              {/* //this is the child component that will be rendered when the user clicks the finish button */}
+            </UncontrolledOnboardingFlow>
+          }
+        />
       </Routes>
     </>
   );
