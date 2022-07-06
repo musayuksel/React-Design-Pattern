@@ -15,6 +15,9 @@ export default function Nav() {
       <li>
         <Link to={"uncontrolled-form"}>Uncontrolled Form</Link>
       </li>
+      <li>
+        <Link to={"controlled-form"}>Controlled Form</Link>
+      </li>
     </ul>
   );
 }
