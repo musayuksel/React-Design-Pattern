@@ -10,10 +10,10 @@ export default function RecursiveComponent({ data }) {
   if (!isObject(data)) {
     return <li>{data}</li>;
   }
-  const keyValuePairs = Object.entries(data);
+
   return (
     <>
-      {keyValuePairs.map(([key, value]) => (
+      {Object.entries(data).map(([key, value]) => (
         <li>
           {key}:
           <ul>
